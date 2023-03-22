@@ -3,6 +3,151 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Roboto:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300&family=Roboto+Slab&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@200&family=Poppins:wght@300&family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,300&display=swap');
+
+/****** carrousell ******/
+.text{
+    text-align: center;
+    justify-content: center;
+}
+.text h1{
+    margin-top:35px;
+    color: white;
+}
+.products_body{
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    width: 100%;
+    height: 40vh;
+}
+.wrapper{
+    width: 450px;
+    height:280px;
+    background: transparent;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px 10px 10px 10px;
+    transform: scale(0.93);
+    transition: box-shadow 0.5s, transform 0.5s;
+    z-index: 1000;
+}
+.wrapper:hover{
+    transform: scale(1);
+    box-shadow: 5px 20px 30px rgba(0,0,0,0.2);
+}
+
+.wrapper .container{
+    width: 100%;
+    height: 70%;
+}
+
+.wrapper .container .top{
+    height: 80%;
+    width: 100%;
+    background-size: 100%;
+}
+.wrapper .container .bottom{
+    width: 100%;
+    height: 20%;
+    transition: transform 0.5s;
+}
+
+.wrapper .container .bottom .left{
+    height: 100%;
+    width: 100%;
+    background: #f4f4f4;
+    position: relative;
+    float: left;
+}
+
+.wrapper .container .bottom .left .details{
+    padding-left: 20px;
+    float: left;
+    width: calc(70% - 40px);
+}
+
+.wrapper .container .bottom .left .details .txt_products{
+    font-size: 25px;
+}
+
+.wrapper .container .bottom .left .buy{
+    float: right;
+    height: 100%;
+    background: #f1f1f1;
+    transition: background 0.5s;
+    border-left: solid thin rgba(0,0,0,0.1);
+}
+.wrapper .container .bottom .left .buy i{
+    font-size: 30px;
+    padding: 30px;
+    color: #0781b6;
+    transition: transform 0.5s;
+}
+
+.wrapper .container .bottom .left .buy:hover i{
+    transform: rotate(360deg);
+}
+
+.wrapper .inside{
+    z-index: 9;
+    background: #0781b6;
+    width: 140px;
+    height: 140px;
+    position: absolute;
+    top: -70px;
+    right: -70px;
+    border-radius: 0px 0px 200px 200px;
+    transition: all 0.5s, border-radius 2s, top 1s;
+    overflow: hidden;
+}
+
+.wrapper .inside .icon{
+    position: absolute;
+    right: 85px;
+    top: 85px;
+    color: white;
+    opacity: 1;
+}
+
+.wrapper .inside:hover{
+    width: 100%;
+    right: 0;
+    top: 0;
+    border-radius: 0;
+    height: 80%;
+}
+.wrapper .inside:hover .icon{
+    opacity: 0;
+    right: 15px;
+    top: 15px;
+}
+.wrapper .inside:hover .contents{
+    opacity: 1;
+    transform: scale(1);
+    transform: translateY(0);
+}
+
+.wrapper .inside .contents{
+    padding: 5%;
+    opacity: 0;
+    transform: scale(0.5);
+    transform: translateY(-200%);
+    transition: opacity 0.2s,transform 0.8s;
+}
+.wrapper .inside .contents h1,
+.wrapper .inside .contents p{
+    color: white;
+}
+
+.wrapper .inside .contents p{
+    font-size: 19px;
+}
+/****** carrousell ******/
+
 
 *{
     margin: 0;
@@ -32,7 +177,7 @@
 
 .itemCarrouselTarjeta{
 display:flex;
-padding-left: 228px;
+padding-left: 80px;
 gap: 69px;
 width: 48%;
 height: 88%;
@@ -132,8 +277,16 @@ height: 88%;
     font-size: 17px;
 
 }
-
-
+.listapro{
+    background-color: #75c5cd;
+}
+.tamaletra{
+    font-size: 18px;
+}
+.container{
+    padding-left: 90px;
+    padding-right: 90px;  
+}
 .container_all{
     position: relative;
     right: 0;
@@ -142,12 +295,18 @@ height: 88%;
 .coheblanco{
 
 position: relative;
-width: 42px;
+width: 72px;
 bottom:123px;
 left: 195px;
 transform: rotate(24deg);
 }
+.educacion img{
+    width: 180px;
+    position: relative;
+    bottom: 146px;
+    left: 155px;
 
+}
 header{
     width: 100%;
     height: 100px;
@@ -192,10 +351,15 @@ h6{
     display: flex;
     gap: 59px;
 }
-.objetivo img{
 
- width:421px;
- padding-right:23px;
+.saludb{
+    padding-right:23px;
+
+}
+.imgninob{
+    position: relative;
+    right: 32px;
+    width: 223px;
 }
 img{
     padding-top: 19px;
@@ -216,7 +380,12 @@ nav{
     height: 100%;
 }
 
+a:link, a:visited, a:active {
+    text-decoration:none;
+}
+
 nav ul{
+    list-style:none;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -231,6 +400,41 @@ nav ul li a{
     color: #000;
     font-size: 14px;
 }
+
+        ul, ol {
+            list-style:none;
+        }
+        
+        #nav > li {
+            float:left;
+        }
+                
+        #nav li a:hover {
+            background-color:#9dd8f4;
+        }
+        
+        #nav li ul {
+            display:none;
+            position:absolute;
+            min-width:140px;
+        }
+        
+        #nav li:hover > ul {
+            display:block;
+        }
+        
+        #nav li ul li {
+            position:relative;
+            font-weight:400;
+            margin:0px;
+
+        }
+        
+        #nav li ul li ul {
+            right:-140px;
+            top:0px;
+            
+        }
 
 .nav_mod{
     height: 70px;
@@ -280,6 +484,18 @@ nav ul li a{
   font-family:'Dancing Script', cursive;
 }
 
+.binoblancob{
+    position: relative;
+    width: 100px;
+    bottom: 35px;
+    left: 90px;  
+}
+.salud{
+    position: relative;
+    width: 83px;
+    bottom: 104px;
+    left: 166px; 
+}
 .binoblanco{
     position: relative;
     width: 83px;
@@ -304,7 +520,7 @@ nav ul li a{
 .contenedor-global{
 
     position: relative;
-    right: 179px;
+    right: 25%;
 }
 .contsegundo{
     display: flex;
@@ -482,12 +698,44 @@ nav ul li a{
     position:relative;
     top:-11px;
 }
+.intercaladossocial{
+    background-color: #6f0e9b;
+    color: #0e46b9;
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 23px;  
+}
+.intercaladossalud{
+    background-color: #0e46b9;
+    color: #0e46b9;
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 23px;
+}
 .coloresintercalados {
     background-color: #830eb9;
     color: #830eb9;
     text-align: center;
     font-family: 'Dancing Script', cursive;
     font-size: 23px;
+}
+
+.social{
+    display: flex;
+    text-align: justify;
+    padding-top: 16px;
+    margin-bottom:10px;
+    gap: 158px;
+
+}
+
+.saludcon{
+    display: flex;
+    text-align: justify;
+    padding-top: 16px;
+    margin-bottom:253px;
+    gap: 158px;
+
 }
 .misionnino{
     display: flex;
@@ -549,10 +797,18 @@ nav ul li a{
     color:white;
     font-size: 37px;
 }
+.titulosomdeporte{
+    text-align: initial;
+    padding-bottom: 6px;
+    font-family: 'Roboto', sans-serif;
+    color:#0f66e3;
+    font-size: 32px;
+    text-shadow:-5px 5px 7px #434242;
+}
 .titulosombreado{
 
     font-size: 60px;
-    padding-left: 411px;
+    text-align: center;
     padding-bottom: 13px;
     font-family: 'Dancing Script', cursive;
     color:#00337C;
@@ -561,9 +817,14 @@ nav ul li a{
     }
 
 .letra{
-    font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
+    font-size: 20px;
     padding-bottom: 25px;
+}
+.letraedu{
+    font-size: 21px;
+    padding-bottom: 25px;
+    COLOR: #000000f5;
+    text-decoration-color: black
 }
 
 
@@ -909,11 +1170,37 @@ nav ul li a{
 
 /*WAVE FINAL*/
 
+.imclib{
+    background-color: #457cc7;
+    margin-bottom: 11px;
+    width: 251px;
+    height: 251px;
+}
+.socialcuadro{
+    background-color: #6f0e9b;
+    margin-bottom: 11px;
+    width: 251px;
+    height: 251px;
+}
+.imcli{
+    background-color: #457cc7;
+    margin-bottom: 11px;
+    width: 251px;
+    height: 251px;
+}
+
+.subimg{
+    margin-bottom: 11px;
+    width: 224px;
+    height: 235px;
+    position:relative;
+    bottom: 91px;
+}
 .blue { 
     background-color: #6D67E4;
     margin-bottom: 11px;
     width: 251px;
-    height: 346px;
+    height: 254px;
     color: #FFF;
     }
 .resena{
@@ -923,6 +1210,45 @@ nav ul li a{
     height: 381px;
     color: #FFF;
     padding-left: 21px;
+}
+.deporte{
+    background-color: #27a3c5;
+    margin-bottom: 11px;
+    width: 251px;
+    height: 224px;
+    color: #FFF;  
+}
+.casa{
+    width: 85px;
+    position: relative;
+    bottom: 117px;
+    left: 165px;
+}
+.casanino{
+    background-color: #7521a5;
+    margin-bottom: 11px;
+    width: 251px;
+    height: 224px;
+    color: #FFF;   
+}
+.aula{
+    width: 85px;
+    position: relative;
+    bottom: 117px;
+    left: 165px;
+}
+.titulohos{
+    background-color: #e9ca97;
+    margin-bottom: 11px;
+    margin-top: 30px;
+    width: 412px;
+    font-family: 'Roboto', sans-serif;
+}
+.textohos{
+    font-size: 29px;
+    text-align: initial;
+    color: #6c07b9;
+    text-shadow: -2px 5px 7px #434242;
 }
 .gr{
 
@@ -1025,38 +1351,8 @@ nav ul li a{
     }
 }
 
-   
-    
 
-@media (min-width: 750px) {
-   
-    .contenedor-quienessomos {
-       
-    }
-
-    .contsegundo{
-    
-    
-    }
-    .binoculares{ 
-
-    }
-    .cohete{
-      
-   
-    }
-    .estrella{
-       
-    
-    }
-    .blanco{
-     
-    
-    }
-}
-
-
-@media screen and (max-width: 920px){
+@media screen and (max-width: 920px){ 
 
     .container__vector img{
         width: 200px;
@@ -1064,6 +1360,11 @@ nav ul li a{
 }
 
 @media screen and (max-width: 760px){
+
+.container{
+    padding-left: 44px;
+    padding-right: 29px;
+}
 
     .container__nav{
        display: flex;
@@ -1088,7 +1389,9 @@ nav ul li a{
     .move_nav{
         right: 0px;
     }
-
+.listapro{
+    background-color: #75c5cd;
+}
     nav ul{
         flex-direction: column;
     }
@@ -1103,11 +1406,6 @@ nav ul li a{
     }
 
 }
-
-
-
-
-
 
 
 
@@ -1159,11 +1457,21 @@ footer{
 }
 
 .container__footer{
+    width: 100%;
+    margin-left: 20px;
     padding-top: 55px;
 }
-.container-pie{
+.pie-pagina{
+    margin-left: 20px;
     display: flex;
     gap:689px;
+}
+.container-servicios img{
+    width: 219px;
+    height: 100px;
+    position: relative;
+    bottom: 136px;
+    left: 980px;
 }
 .container-pie img{
 
@@ -1174,6 +1482,28 @@ footer{
     
 @media screen and (max-width: 760px){
 
+    .container-servicios img{
+        width: 219px;
+        height: 100px;
+        position: relative;
+        bottom: 136px;
+        left: 425px;
+    }
+
+    .coheblanco {
+        position: relative;
+        width: 72px;
+        bottom: 123px;
+        left: 169px;
+        transform: rotate(24deg);
+    }
+    .salud{
+
+        position: relative;
+        width: 83px;
+        bottom: 65px;
+        left: 128px;
+    }
    .contenedor-quienessomos{
 
     width: 237px;
